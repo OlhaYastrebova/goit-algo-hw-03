@@ -1,12 +1,12 @@
 import random
 
-def get_numbers_ticket(min_num, max_num, quantity):
+def get_numbers_ticket(min, max, quantity):
     # Перевірка обмежень
-    if min_num >= max_num or quantity <= 0 or quantity > (max_num - min_num + 1):
+    if min >= max or quantity <= 0 or quantity > (max - min + 1):
         return []
     
     # Генерація списку чисел від min до max
-    numbers = list(range(min_num, max_num + 1))
+    numbers = list(range(min, max + 1))
     
     # Вибір випадкових чисел без повторень
     chosen_numbers = random.sample(numbers, k=quantity)
@@ -16,11 +16,11 @@ def get_numbers_ticket(min_num, max_num, quantity):
     return chosen_numbers
 
 # Приклад використання
-min_num = 1
-max_num = 49
+min = 1
+max = 49
 quantity = 6
 
-ticket_numbers = get_numbers_ticket(min_num, max_num, quantity)
+ticket_numbers = get_numbers_ticket(min, max, quantity)
 if ticket_numbers:
     print(f"Your ticket numbers are: {ticket_numbers}")
 else:
